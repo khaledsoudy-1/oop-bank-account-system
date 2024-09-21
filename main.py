@@ -17,5 +17,5 @@ khaled.deposit(300)       # OUTPUT: Account 'Khaled' balance = $800.00
 khaled.withdrawal(300)    # OUTPUT: Account 'Khaled' balance = $500.00
 
 # Make another Withdrawal
-khaled.withdrawal(600)    # OUTPUT: Withdrawal Interrupted ❌
-                          #         Account 'Khaled' only have a balance of $500.00
+khaled.withdrawal(600)
+# OUTPUT: Withdrawal Interrupted ❌: Sorry, account 'Khaled' only has a balance of $500.00
