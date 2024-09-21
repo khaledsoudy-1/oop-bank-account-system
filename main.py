@@ -7,3 +7,6 @@ khaled = BankAccount("Khaled", 500)
 print(khaled.name)  # OUTPUT: Khaled
 print(khaled.balance)  # OUTPUT: 500
 
+# Get account balance
+khaled.get_acc_balance()  # OUTPUT: Account 'Khaled' balance = $500.00
+
