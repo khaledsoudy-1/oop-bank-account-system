@@ -11,4 +11,7 @@ class BankAccount:
         print(f"\nAccount '{self.name}' balance = ${self.balance:.2f}")
     
     
-    
+    def deposit(self, amount):
+        self.balance += amount
+        print("\nDeposit Completed Successfully ✅")
+        self.get_acc_balance()
