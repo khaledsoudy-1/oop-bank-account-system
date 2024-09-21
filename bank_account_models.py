@@ -18,6 +18,10 @@ class BankAccount:
         
     
     def withdrawal(self, amount):
-        self.balance -= amount
-        print("\nWithdraw Completed Successfully ✅")
-        self.get_acc_balance()
+        if self.balance >= amount:
+            self.balance -= amount
+            print("\nWithdrawal Completed Successfully ✅")
+            self.get_acc_balance()
+        else:
+            print(f"\nWithdrawal Interrupted ❌")
+            print(f"\nAccount '{self.name}' only have a balance of ${self.balance:.2f}")
