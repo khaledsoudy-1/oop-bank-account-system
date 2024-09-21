@@ -15,3 +15,9 @@ class BankAccount:
         self.balance += amount
         print("\nDeposit Completed Successfully ✅")
         self.get_acc_balance()
+        
+    
+    def withdrawal(self, amount):
+        self.balance -= amount
+        print("\nWithdraw Completed Successfully ✅")
+        self.get_acc_balance()

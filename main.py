@@ -11,4 +11,8 @@ print(khaled.balance)  # OUTPUT: 500
 khaled.get_acc_balance()  # OUTPUT: Account 'Khaled' balance = $500.00
 
 # Make a Deposit
-khaled.deposit(300)
+khaled.deposit(300)       # OUTPUT: Account 'Khaled' balance = $800.00
+
+# Make a Withdrawal
+khaled.withdrawal(300)    # OUTPUT: Account 'Khaled' balance = $500.00
+
