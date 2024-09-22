@@ -6,32 +6,37 @@
 - Definition: When you put money into a bank account.
 - Example: You get your salary and deposit $1,000 into your account. The bank holds this money for you.
 
+
 2. Withdrawals:
 - Definition: When you take money out of your bank account.
 - Example: You withdraw $200 from your account using an ATM to pay for groceries. Your account balance decreases by $200.
 
+
 3. Loans:
 - Definition: The bank gives you money that you agree to pay back later with interest.
 - Example: You borrow $10,000 to buy a car. You pay it back over time, plus interest.
+
 
 4. Interest:
 - Definition: The extra money you earn or pay.
               The bank pays you interest on savings and charges you interest on loans.
 - Example: You earn 2% interest on your savings of $1,000, which gives you $20 at the end of the year.
 
-5. Accounts:
-- Types:
-    - Savings Account: Earns interest, for saving money.
-    - Checking Account: Used for daily transactions, usually without interest.
-- Example: You have a savings account for emergencies and a checking account for daily spending.
+
+5. Interest Rates:
+- Definition: The percentage used to calculate interest on savings or loans.
+- Example: Borrowing $1,000 at 5% interest means you’ll pay back $1,050.
+
 
 6. Transactions:
 - Definition: The movement of money, like deposits, withdrawals, or transfers.
 - Example: You transfer $100 from your checking account to your savings account.
 
+
 7. Credit:
 - Definition: Borrowing money with a credit card, to be paid back later, often with interest.
 - Example: You use a credit card to buy a $500 TV and pay it back over several months.
+
 
 8. Fees:
 - Definition: Banks often charge fees for various services, such as account maintenance, overdrafts, and ATM use.
@@ -49,6 +54,7 @@
         - If your account balance falls below $500, you might be charged a $10 monthly fee.
         - If you withdraw money from an ATM not owned by your bank, you could be charged a $3 fee.
 
+
 9. Overdraft Protection:
 - Definition: A service that prevents your account from going negative by automatically transferring money from
               another account or a line of credit.
@@ -58,21 +64,25 @@
 
 
 ================================
-         Key Concepts
+          Bank Accounts
 ================================
 
-1. Savings Account:
-- Definition: A bank account designed to help you save money while earning interest.
-- Example: You put $1,000 in a savings account with a 2% interest rate. After a year, you’ll have $1,020.
+1. Checking Account:
+    - Definition: A bank account for everyday transactions, like paying bills or shopping.
 
-2. Checking Account:
-- Definition: A bank account for everyday transactions, like paying bills or shopping.
-- Example: You use your checking account to pay your electricity bill.
+    - Example: You use your checking account to pay your electricity bill.
 
-3. Interest Rates:
-- Definition: The percentage used to calculate interest on savings or loans.
-- Example: Borrowing $1,000 at 5% interest means you’ll pay back $1,050.
 
-4. Fees:
-- Definition: Charges for various banking services, like account maintenance or overdrafts.
-- Example: Your bank charges a $10 fee if your balance falls below a certain amount.
+2. Savings Account:
+    - Definition: A bank account designed to help you save money while earning interest.
+
+    - Example: You put $1,000 in a savings account with a 2% interest rate. After a year, you’ll have $1,020.
+
+
+3. Interest Rewards Account:
+    - Definition: It is a type of savings account that offers interest rates for maintaining a larger balance
+                  or meeting specific requirements.
+
+    - Example:  You open an Interest Rewards Account with a bank that pays 2.5% interest if your balance is
+                above $5,000. If you deposit $6,000, you'll earn interest based on that higher balance.
+
