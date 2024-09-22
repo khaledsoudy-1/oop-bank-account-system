@@ -30,7 +30,7 @@ class BankAccount:
         """Print the current balance of the account."""
         print(f"Account '{self.name}' balance = ${self.balance:.2f}")
     
-    def validate_deposit(self, amount):
+    def _validate_deposit(self, amount):
         """Validate the deposit amount against the limits."""
         if self.MIN_LIMIT < amount < self.MAX_LIMIT:
             return  # Amount is valid
@@ -51,7 +51,7 @@ class BankAccount:
         except DepositLimitException as error:
             print(f"\nDeposit Interrupted ❌: {error}")
     
-    def viable_transaction(self, amount):
+    def _viable_transaction(self, amount):
         """Check if there is sufficient balance for a transaction."""
         if self.balance >= amount:
             return  # Balance is sufficient
