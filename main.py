@@ -2,6 +2,7 @@ from bank_account_models import *
 
 # Create an instance of the class
 khaled = BankAccount("Khaled", 500)
+sara = BankAccount("Sara", 1000)
 
 # Get and print account name and balance
 print(khaled.name)  # OUTPUT: Khaled
@@ -23,3 +24,9 @@ khaled.withdrawal(600)
 # Make another Deposit
 khaled.deposit(200000)
 # OUTPUT: Deposit Interrupted ❌: Deposits are limited between $10 : $10000
+
+# Make a Transfer
+sara.transfer(1000, khaled)
+# OUTPUT: Deposit Completed Successfully ✅
+
+sara.transfer(200, khaled)

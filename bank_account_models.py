@@ -18,7 +18,7 @@ class BankAccount:
         print(f"✅ Account successfully created!\nAccount Name: {self.name}\t\t\tAccount Balance: ${self.balance:.2f}\n")
     
     def get_acc_balance(self):
-        print(f"\nAccount '{self.name}' balance = ${self.balance:.2f}")
+        print(f"Account '{self.name}' balance = ${self.balance:.2f}")
     
     
     def validate_deposit(self, amount):
@@ -51,3 +51,15 @@ class BankAccount:
         
         except BalanceException as error:
             print(f"\nWithdrawal Interrupted ❌: {error}")
+
+
+    def transfer(self, amount, account):
+        try:
+            print("========== Beginning Transfer... 🚀 ==========")
+            self.withdrawal(amount)
+            account.deposit(amount)
+            print("\nTransfer Completed Successfully ✅")
+
+        except (BalanceException, DepositLimitException) as error:
+            print(f"\nTransfer Interrupted ❌: {error}")
+        
