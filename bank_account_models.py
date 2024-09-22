@@ -1,64 +1,72 @@
 class BalanceException(Exception):
+    """Exception raised for insufficient balance in the account."""
     pass
 
 
 class DepositLimitException(Exception):
+    """Exception raised for deposit amounts outside the allowed limits."""
     pass
 
 
 class BankAccount:
-    MIN_LIMIT = 10
-    MAX_LIMIT = 10000
+    MIN_LIMIT = 10                           # Minimum deposit limit
+    MAX_LIMIT = 10000                        # Maximum deposit limit
     
     def __init__(self, acc_name, initial_amount):
-        self.name = acc_name
-        self.balance = initial_amount
+        self.name = acc_name                 # Set account name
+        self.balance = initial_amount        # Set initial balance
         
-        # show a welcome message with details after each account creation
+        # Show a welcome message after account creation
         print(f"✅ Account successfully created!\nAccount Name: {self.name}\t\t\tAccount Balance: ${self.balance:.2f}\n")
     
     def get_acc_balance(self):
+        """Print the current balance of the account."""
         print(f"Account '{self.name}' balance = ${self.balance:.2f}")
     
     def validate_deposit(self, amount):
+        """Validate the deposit amount against the limits."""
         if self.MIN_LIMIT < amount < self.MAX_LIMIT:
-            return
+            return               # Amount is valid
         raise DepositLimitException(f"Deposits are limited between ${self.MIN_LIMIT} : ${self.MAX_LIMIT}")
     
     def deposit(self, amount):
+        """Deposit the specified amount into the account."""
         try:
-            self.validate_deposit(amount)
-            self.balance += amount
+            self.validate_deposit(amount)               # Check if deposit is within limits
+            self.balance += amount                      # Increase the balance
             print("\nDeposit Completed Successfully ✅")
-            self.get_acc_balance()
+            self.get_acc_balance()                      # Show updated balance
         
         except DepositLimitException as error:
             print(f"\nDeposit Interrupted ❌: {error}")
     
     def viable_transaction(self, amount):
+        """Check if there is sufficient balance for a transaction."""
         if self.balance >= amount:
-            return
+            return                # Balance is sufficient
         raise BalanceException(f"Sorry, account '{self.name}' only has a balance of ${self.balance:.2f}")
     
     def withdrawal(self, amount):
+        """Withdraw the specified amount from the account."""
         try:
-            self.viable_transaction(amount)
-            self.balance -= amount
+            self.viable_transaction(amount)              # Check if withdrawal is possible
+            self.balance -= amount                       # Deduct the amount from balance
             print("\nWithdrawal Completed Successfully ✅")
-            self.get_acc_balance()
+            self.get_acc_balance()                       # Show updated balance
         
         except BalanceException as error:
             print(f"\nWithdrawal Interrupted ❌: {error}")
     
     def transfer(self, amount, account):
+        """Transfer the specified amount to another account."""
         try:
             print("\n========== Beginning Transfer... 🚀 ==========")
             
             # Ensure balance is sufficient before withdrawal to avoid incorrect transfers
-            self.viable_transaction(amount)
+            self.viable_transaction(amount)              # Check balance for the transfer
             
-            self.withdrawal(amount)
-            account.deposit(amount)
+            self.withdrawal(amount)                      # Perform the withdrawal
+            account.deposit(amount)                      # Deposit to the target account
             
             print("\nTransfer Completed Successfully ✅")
         
