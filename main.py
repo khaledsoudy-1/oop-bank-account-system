@@ -32,3 +32,19 @@ sara.transfer(1000, khaled)
 # Make another Transfer
 sara.transfer(200, khaled)
 # OUTPUT: Transfer Interrupted ❌: Sorry, account 'Sara' only has a balance of $0.00
+
+#########################
+# Create an Interest Rewards Account
+john = InterestRewardsAcc("John", 5000)
+# OUTPUT: ✅ Account successfully created!
+# OUTPUT:  Account Name: John			Account Balance: $5000.00
+
+# Make a Deposit
+john.deposit(500)
+# OUTPUT: Account 'John' balance = $5525.00
+
+# Make a Transfer
+john.transfer(1000, sara)
+# OUTPUT: Account 'John' balance = $4525.00
+# OUTPUT: Account 'Sara' balance = $1000.00
+# OUTPUT: Transfer Completed Successfully ✅

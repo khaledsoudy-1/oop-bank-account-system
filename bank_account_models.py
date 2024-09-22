@@ -17,7 +17,7 @@ class BankAccount:
         self.balance = initial_amount        # Set initial balance
         
         # Show a welcome message after account creation
-        print(f"✅ Account successfully created!\nAccount Name: {self.name}\t\t\tAccount Balance: ${self.balance:.2f}\n")
+        print(f"\n✅ Account successfully created!\nAccount Name: {self.name}\t\t\tAccount Balance: ${self.balance:.2f}\n")
     
     def get_acc_balance(self):
         """Print the current balance of the account."""
@@ -72,3 +72,21 @@ class BankAccount:
         
         except (BalanceException, DepositLimitException) as error:
             print(f"\nTransfer Interrupted ❌: {error}")
+
+
+class InterestRewardsAcc(BankAccount):
+    Interest_rate = 0.05  # Interest rate for the savings account
+    
+    def deposit(self, amount):
+        """Override: Deposit the specified amount into the savings account, including interest."""
+        try:
+            self.validate_deposit(amount)  # Validate deposit limits
+            
+            # Increase balance by the deposit amount plus interest on that amount
+            self.balance += (amount + self.Interest_rate * amount)
+            
+            print("\nDeposit Completed Successfully ✅")
+            self.get_acc_balance()  # Show updated balance
+        
+        except DepositLimitException as error:
+            print(f"\nDeposit Interrupted ❌: {error}")
