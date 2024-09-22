@@ -1,12 +1,12 @@
 class BalanceException(Exception):
     pass
 
+
 class DepositLimitException(Exception):
     pass
 
 
 class BankAccount:
-    
     MIN_LIMIT = 10
     MAX_LIMIT = 10000
     
@@ -20,12 +20,10 @@ class BankAccount:
     def get_acc_balance(self):
         print(f"Account '{self.name}' balance = ${self.balance:.2f}")
     
-    
     def validate_deposit(self, amount):
         if self.MIN_LIMIT < amount < self.MAX_LIMIT:
             return
         raise DepositLimitException(f"Deposits are limited between ${self.MIN_LIMIT} : ${self.MAX_LIMIT}")
-        
     
     def deposit(self, amount):
         try:
@@ -33,7 +31,7 @@ class BankAccount:
             self.balance += amount
             print("\nDeposit Completed Successfully ✅")
             self.get_acc_balance()
-            
+        
         except DepositLimitException as error:
             print(f"\nDeposit Interrupted ❌: {error}")
     
@@ -51,15 +49,18 @@ class BankAccount:
         
         except BalanceException as error:
             print(f"\nWithdrawal Interrupted ❌: {error}")
-
-
+    
     def transfer(self, amount, account):
         try:
-            print("========== Beginning Transfer... 🚀 ==========")
+            print("\n========== Beginning Transfer... 🚀 ==========")
+            
+            # Ensure balance is sufficient before withdrawal to avoid incorrect transfers
+            self.viable_transaction(amount)
+            
             self.withdrawal(amount)
             account.deposit(amount)
+            
             print("\nTransfer Completed Successfully ✅")
-
+        
         except (BalanceException, DepositLimitException) as error:
             print(f"\nTransfer Interrupted ❌: {error}")
-        

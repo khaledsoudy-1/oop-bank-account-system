@@ -29,4 +29,6 @@ khaled.deposit(200000)
 sara.transfer(1000, khaled)
 # OUTPUT: Deposit Completed Successfully ✅
 
+# Make another Transfer
 sara.transfer(200, khaled)
+# OUTPUT: Transfer Interrupted ❌: Sorry, account 'Sara' only has a balance of $0.00
