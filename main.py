@@ -48,3 +48,20 @@ john.transfer(1000, sara)
 # OUTPUT: Account 'John' balance = $4525.00
 # OUTPUT: Account 'Sara' balance = $1000.00
 # OUTPUT: Transfer Completed Successfully ✅
+
+
+#########################
+# Create a Savings Account
+messi = SavingsAcc("Messi", 8000)
+# OUTPUT: ✅ Account successfully created!
+# OUTPUT:  Account Name: Messi			Account Balance: $8000.00
+
+# Make a Deposit
+messi.deposit(1000)
+# OUTPUT: Account 'Messi' balance = $9050.00
+
+# Make a Transfer
+messi.transfer(1000, sara)
+# OUTPUT: Account 'Messi' balance = $8045.00
+# OUTPUT: Account 'Sara' balance = $2000.00
+# OUTPUT: Transfer Completed Successfully ✅

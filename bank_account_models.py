@@ -90,3 +90,21 @@ class InterestRewardsAcc(BankAccount):
         
         except DepositLimitException as error:
             print(f"\nDeposit Interrupted ❌: {error}")
+
+
+class SavingsAcc(InterestRewardsAcc):
+    Fees = 5            # Fixed fee for withdrawals
+    
+    def withdrawal(self, amount):
+        """Override: Withdraw the specified amount from the savings account, including a fee."""
+        try:
+            self.viable_transaction(amount + self.Fees)  # Check if withdrawal is possible
+            
+            # Deduct the withdrawal amount plus the fee
+            self.balance -= (amount + self.Fees)
+            
+            print("\nWithdrawal Completed Successfully ✅")
+            self.get_acc_balance()  # Show updated balance
+        
+        except BalanceException as error:
+            print(f"\nWithdrawal Interrupted ❌: {error}")
